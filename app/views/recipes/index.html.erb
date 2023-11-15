@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="main-title">All Recipes</h1>
+
+<div class="recipes">
+  <% @recipes.each do |recipe| %>
+    <%= render 'recipes/shares/recipe', recipe:recipe %>
+  <% end %>
+  <%= button_to "Create New Recipe", new_recipe_path, method: :get, class: "recipe-btn" %>
+</div>

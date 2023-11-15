@@ -1,0 +1,23 @@
+<div class="section-container">
+  <h1 class="main-title"><%=@recipe.name%></h1>
+    <div class="recipe_content">
+        <div class="recipe_info">
+            <div class="recipe-text">Preparation time: <%=@recipe.preparation_time%>hours</div>
+            <div class="recipe-text">Cooking time: <%=@recipe.cooking_time%>hours</div>
+            <div class="recipe-decription">
+                <p>Steps:</p>
+                <p>
+                    <%=@recipe.description%>
+                </p>
+            </div>
+            <div class="extra-buttons">
+                <%= button_to "Generate Shopping List" %>
+                <%= button_to "Add Ingredient" %>
+            </div>
+            <hr class="horizontal-line" />
+        </div>
+        <div class="toggle_cont">
+            <div>Hello</div>
+        </div>
+    <div>
+</div>

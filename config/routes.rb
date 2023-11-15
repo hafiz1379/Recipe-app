@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+  #Define the routes for the recipes
+  resources :recipes, except: [:update]
 end

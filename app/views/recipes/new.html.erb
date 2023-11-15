@@ -1,0 +1,32 @@
+<div class="section-container">
+  <h1 class="main-title">Create a new recipe</h1>
+
+  <div class="form-wrapper col-2-form">
+    <%= form_with(model: @recipe, url: recipes_path) do |f| %>
+      <div class="form-fields-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true, class: 'form-field' %>
+      </div>
+      <div class="form-fields-group">
+        <%= f.label :preparation_time %>
+        <%= f.number_field :preparation_time, required: true, class: 'form-field' %>
+      </div>
+      <div class="form-fields-group">
+        <%= f.label :cooking_time %>
+        <%= f.number_field :cooking_time, required: true, class: 'form-field' %>
+      </div>
+      <div class="form-fields-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, required: true, class: 'form-field' %>
+      </div>
+      <div>
+        <%= f.label 'Public' %>
+        <%= f.check_box :public, class: 'form-field' %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Save recipe", class: 'action-button' %>
+        <%= link_to 'Cancel', recipes_path, class: 'action-button warning' %>
+      </div>
+    <% end %>
+  </div>
+</div>
