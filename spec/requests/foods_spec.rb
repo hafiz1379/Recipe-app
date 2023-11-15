@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Foods', type: :request do
-   # request to: /foods
-   describe 'GET /index' do
+  # request to: /foods
+  describe 'GET /index' do
     # the user Gerard logged in before run the tests
     before do
       user = FactoryBot.create(:user)
