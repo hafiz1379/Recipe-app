@@ -26,6 +26,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -65,12 +69,62 @@ main {
   text-align: center;
 }
 
+.page-content {
+  width: 100%;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2.5rem 0;
+}
+
+.action-button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 1.5px solid #178635;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #178635;
+  transition: all 0.3s ease-in-out;
+}
+
+.action-button:hover {
+  background-color: #178635;
+  color: white;
+  box-shadow: 0 0 10px #b1b5b2;
+  transform: scale(1.05);
+}
+
+.action-button.warning {
+  border: 1.5px solid #ec950a;
+  color: #ec950a;
+}
+
+.action-button.warning:hover {
+  background-color: #ec950a;
+  color: white;
+}
+
+.action-button.danger {
+  border: 1.5px solid #a61b1b;
+  color: #a61b1b;
+}
+
+.action-button.danger:hover {
+  background-color: #a61b1b;
+  color: white;
+}
+
 /* FORM */
 .form-wrapper {
   width: 100%;
 }
 
 .form-wrapper form {
+  width: 100%;
   margin: 1rem 0;
   display: flex;
   flex-direction: column;
@@ -91,6 +145,7 @@ main {
 }
 
 .form-field {
+  background-color: #fff;
   padding: 1rem;
   border: 1px solid #bbb6b6;
   border-radius: 0.3rem;
@@ -165,6 +220,40 @@ main {
 .horizontal-line {
   height: 2px;
   margin-top: 20px;
+  
+.form-wrapper form .actions {
+  padding: 1rem 0;
+}
+
+/* TABLE */
+.table {
+  width: 100%;
+  background-color: #fff;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #f0f0f0;
+  border-style: solid;
+  color: #000;
+}
+
+.table td {
+  border: 2px solid #f0f0f0;
+}
+
+.table td,
+.table th {
+  padding: 1rem;
+  text-align: left;
+}
+
+.table .table-header {
+  background-color: #080808;
+  color: #fff;
+}
+
+.table .table-body tr:nth-child(odd),
+.table .table-body tr:hover {
+  background-color: #f6f6f6;
 }
 
 /* MEDIA QUERIES */
@@ -186,6 +275,16 @@ main {
 
   .form_container {
     width: 80%;
+  }
+
+  .form-wrapper.col-2-form form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .form-wrapper.col-2-form .form-fields-group {
+    width: 48.5%;
   }
 }
 
