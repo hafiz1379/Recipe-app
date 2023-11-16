@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe 'Foods', type: :request do
-  # request to: /foods
-  describe 'GET /index' do
+RSpec.describe 'Recipes', type: :request do
+  # Request to /recipes
+  describe 'GET index' do
     # the user Gerard logged in before run the tests
     before do
       user = FactoryBot.create(:user)
-      FactoryBot.create(:food, user:)
+      FactoryBot.create(:recipe, user:)
       sign_in user
-      get foods_path
+      get recipes_path
     end
 
     # test if the response status was correct (status 200)
@@ -23,20 +23,20 @@ RSpec.describe 'Foods', type: :request do
 
     # test If the response body includes correct content.
     it 'renders the index template with correct content' do
-      expected_result = 'Foods List'
+      expected_result = 'Recipes List'
       expect(response.body).to include(expected_result)
 
-      expected_result_food = 'Apple'
-      expect(response.body).to include(expected_result_food)
+      expected_result_recipe = 'Cookies'
+      expect(response.body).to include(expected_result_recipe)
     end
   end
 
-  # request to: /foods/new
+  # Request to /recipes/new
   describe 'GET /new' do
     before do
       user = FactoryBot.create(:user)
       sign_in user
-      get new_food_path
+      get new_recipe_path
     end
 
     # test if the response status was correct (status 200)
@@ -50,11 +50,11 @@ RSpec.describe 'Foods', type: :request do
     end
 
     # test If the response body includes correct content.
-    it 'renders the new template with correct content' do
-      expected_result_title = 'Create a new food'
-      expect(response.body).to include(expected_result_title)
+    it 'renders the index template with correct content' do
+      expected_result = 'Create a new Recipe'
+      expect(response.body).to include(expected_result)
 
-      expected_result_button = 'Save food'
+      expected_result_button = 'Save recipe'
       expect(response.body).to include(expected_result_button)
     end
   end

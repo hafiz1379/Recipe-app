@@ -46,9 +46,27 @@ main {
   color: white;
 }
 
+#recipe-description {
+  width: 100%;
+}
+
+#recipe_description {
+  height: 300px;
+}
+
 .main_page_wrapper {
   width: 100%;
   padding: 1rem;
+}
+
+.display-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.radio-buttons {
+  width: 20px;
 }
 
 .section-container {
@@ -276,3 +294,4 @@ main {
 .alert {
   background-color: red;
 }
+
