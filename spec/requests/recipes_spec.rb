@@ -59,8 +59,8 @@ RSpec.describe 'Recipes', type: :request do
     end
   end
 
-   # Request to /recipes/:id
-   describe 'GET /show' do
+  # Request to /recipes/:id
+  describe 'GET /show' do
     before do
       user = FactoryBot.create(:user)
       @recipe = FactoryBot.create(:recipe, user:)

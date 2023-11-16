@@ -25,5 +25,4 @@ class Food < ApplicationRecord
   def general_price
     total_food * price
   end
-
 end
