@@ -1,0 +1,35 @@
+<section class="headline w-100 top-space d-flex justify-center align-items-center">
+  <%= image_tag 'home-bg.jpg', class: 'headline-image w-100 opacity-6' %>
+  <div class="headline-content">
+
+    <p class="headline-greeting dark-text"> Hello there!</p>
+
+    <h1 class="app-title primary-text">CookingHub</h1>
+
+    <h2 class="subtitle">
+    A community where you can showcase your culinary creations and express your passion for cooking to a global audience!
+    </h2>
+
+    <p class="main-text">
+      Cooking is an imaginative and fulfilling pursuit suitable for individuals of all ages and proficiency levels. It serves as a means to articulate your affection for food, explore novel flavors and textures, and foster connections with others through the joy of a shared meal.
+    </p>
+
+    <p class="main-text">
+      The reasons behind people's love for cooking are diverse. Some relish the thrill of inventing new recipes, while others find gratification in providing nourishment for their loved ones. Cooking is also an excellent way to unwind and engage in a therapeutic activity that alleviates stress.
+    </p>
+
+    <p class="main-text">
+      Our extensive collection of cooking recipes is an invaluable asset for those eager to learn new dishes or enhance their culinary expertise. You can access numerous free recipes here. Each recipe shared by our users includes comprehensive, step-by-step instructions, ingredient lists, and cooking times, simplifying the process of crafting delectable meals at home.
+    </p>
+
+    <% if user_signed_in? %>
+      <p class="main-text">
+        Do not wait more! Visit our <%= link_to 'Public Recipes', public_recipes_path, class: 'primary-text' %> page to see all the recipes our users have to offer!
+      </p>
+
+      <p class="main-text">
+        If what you want is to show your cooking love with the world, <%= link_to 'Sign Up', new_user_registration_path, class: 'primary-text' %> on our website and start sharing your recipes!
+      </p>
+    <% end %>
+  </div>
+</section>
