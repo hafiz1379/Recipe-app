@@ -11,14 +11,10 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = current_user.foods.new(food_params)
-
-    if @food.save
-      flash[:notice] = 'The Food was created successfully!'
-      redirect_to foods_path
-    else
-      render :new
-    end
+    food = @food.new(food_params)
+    render :new unless food.save
+    flash[:notice] = 'The Food was created successfully!'
+    redirect_to foods_path
   end
 
   def destroy
