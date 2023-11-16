@@ -47,6 +47,7 @@ RSpec.describe RecipeFood, type: :model do
   end
 
   describe 'recipe food methods' do
+    <<<<<<< feature/N+1-queries
     before :each do
       id = 100_874
       email = "user_recipe_foods_model#{id}@mailrecipefoods.com"
@@ -59,6 +60,11 @@ RSpec.describe RecipeFood, type: :model do
     it 'the total_price method should return the total cost of a ingredient in the recipe' do
       expected_result = (@recipe_food.quantity * @recipe_food.food.price)
       expect(@recipe_food.total_price).to eq(expected_result)
+=======
+    it 'the total_price method should return the total cost of a ingredient in the recipe' do
+      expected_result = (recipe_food.quantity * recipe_food.food.price)
+      expect(recipe_food.total_price).to eq(expected_result)
+>>>>>>> dev
     end
   end
 end
