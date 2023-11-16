@@ -295,3 +295,53 @@ main {
   background-color: red;
 }
 
+.recipes-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipes {
+  display: flex;
+  gap: 40px;
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 554px;
+  background-color: beige;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.recipes-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.Add-recipe,
+.Remove-recipe {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.Add-recipe {
+  background-color: #178635;
+  color: white;
+}
+
+.Remove-recipe {
+  background-color: red;
+  color: white;
+}
+
+.recipes-links {
+  color: black;
+}
