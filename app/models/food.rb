@@ -26,5 +26,4 @@ class Food < ApplicationRecord
     total_food * price
   end
 
-  # Method to calculate the total amount of price of the ingredients.
 end
