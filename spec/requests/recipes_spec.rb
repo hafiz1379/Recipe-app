@@ -59,8 +59,8 @@ RSpec.describe 'Recipes', type: :request do
     end
   end
 
-   # Request to /recipes/:id
-   describe 'GET /show' do
+  # Request to /recipes/:id
+  describe 'GET /show' do
     before do
       id = rand(200_000...400_000)
       email = "user_recipes_show_request#{id}@mailrecipesrequests.com"
