@@ -13,9 +13,9 @@ RSpec.describe RecipeFood, type: :model do
     let(:recipe) { create(:recipe) }
     let(:food) { create(:food) }
 
-    it 'the food same food should be not be present twice in the same recipe' do
-      RecipeFood.create(food:, recipe:, quantity: 5)
-      second_recipe_food = RecipeFood.create(food:, recipe:, quantity: 8)
+    it 'the same food should not be present twice in the same recipe' do
+      RecipeFood.create(food: food, recipe: recipe, quantity: 5)
+      second_recipe_food = RecipeFood.create(food: food, recipe: recipe, quantity: 8)
 
       expect(second_recipe_food).to_not be_valid
     end
@@ -50,13 +50,13 @@ RSpec.describe RecipeFood, type: :model do
     before :each do
       id = 100_874
       email = "user_recipe_foods_model#{id}@mailrecipefoods.com"
-      user = FactoryBot.create(:user, id:, email:)
-      recipe = create(:recipe, user:)
-      food = create(:food, user:)
-      @recipe_food = RecipeFood.create(food:, recipe:, quantity: 1)
+      user = FactoryBot.create(:user, id: id, email: email)
+      recipe = create(:recipe, user: user)
+      food = create(:food, user: user)
+      @recipe_food = RecipeFood.create(food: food, recipe: recipe, quantity: 1)
     end
 
-    it 'the total_price method should return the total cost of a ingredient in the recipe' do
+    it 'the total_price method should return the total cost of an ingredient in the recipe' do
       expected_result = (@recipe_food.quantity * @recipe_food.food.price)
       expect(@recipe_food.total_price).to eq(expected_result)
     end
