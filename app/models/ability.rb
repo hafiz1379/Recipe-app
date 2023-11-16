@@ -1,11 +1,11 @@
 class Ability
   include CanCan::Ability
 
-  def to_hour(value)
-    result = (value / 60)
-    return "#{result} #{'hour'.pluralize(result)}" if value.to_i.remainder(60).zero?
+  def initialize(user)
+    can :read, Recipe, public: true
 
-    result = (value.to_i.to_f / 60).to_f
-    "#{result} #{'hour'.pluralize(result)}"
+    return unless user.present?
+
+    can :manage, Recipe, user_id: user.id
   end
 end
